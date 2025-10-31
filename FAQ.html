@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - LED Visual Innovation</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="javaScript.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .faq-hero {
+            background: url('img/B20.png') center/cover;
+            padding: 150px 0 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .faq-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+        }
+        
+        .faq-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .faq-section {
+            padding: 80px 0;
+        }
+        
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 25px 30px;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+        
+        .faq-question:hover {
+            background: var(--light-color);
+        }
+        
+        .faq-question h3 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin: 0;
+            flex: 1;
+        }
+        
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 30px;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 30px 25px 30px;
+        }
+        
+        .faq-answer p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .faq-categories {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+        
+        .faq-category {
+            padding: 10px 25px;
+            background: white;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .faq-category:hover,
+        .faq-category.active {
+            background: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="img/LOGO2.png" alt="LED Visual Innovation">
+                </a>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="About us.html">About Us</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+                <li><a href="Future.html">Future</a></li>
+                <li><a href="Contact us.html" class="btn-contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="faq-hero">
+        <div class="container">
+            <h1 style="font-size: 3.5rem; margin-bottom: 20px;">Frequently Asked Questions</h1>
+            <p style="font-size: 1.3rem;">Find answers to common questions about LED displays</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is an LED screen and how does it work?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>An LED screen (Light Emitting Diode screen) is a digital display that uses thousands or millions of tiny LEDs to produce images and video. Each LED acts as a pixel, emitting light in red, green, or blue. By combining these colors at varying intensities, LED screens can create millions of different colors and display any image or video content.</p>
+                        <p>LED screens work by sending electrical signals to each LED, controlling their brightness and color. Modern LED displays use sophisticated controllers that manage millions of LEDs simultaneously to create smooth, high-quality visuals.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What are the advantages of LED displays over traditional displays?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>LED displays offer numerous advantages including: superior brightness (visible even in direct sunlight), exceptional energy efficiency (up to 50% less power consumption), longer lifespan (100,000+ hours), better color accuracy, wider viewing angles, seamless scalability to any size, and weather resistance for outdoor applications.</p>
+                        <p>Additionally, LED screens produce less heat, require minimal maintenance, and can be easily customized to fit any space or shape.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long do LED screens last?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our LED screens are designed for longevity, with an average lifespan of 100,000 hours or more. This translates to approximately 11 years of continuous operation or 20+ years with typical daily usage.</p>
+                        <p>The actual lifespan depends on usage patterns, environmental conditions, and maintenance. Our displays feature intelligent power management that extends LED life by adjusting brightness based on ambient conditions.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Are LED screens energy efficient?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! LED displays are highly energy efficient. Our screens consume up to 50% less energy compared to traditional display technologies. They use intelligent brightness control, automatically adjusting power consumption based on ambient light conditions.</p>
+                        <p>For example, our typical outdoor LED screen consumes approximately 150-300W per square meter, while indoor displays use even less. This translates to significant energy savings over the display's lifetime.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can LED screens work in outdoor conditions?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! Our outdoor LED screens are specifically engineered for harsh environmental conditions. They feature IP65 or higher protection ratings, making them dust-proof and water-resistant.</p>
+                        <p>Outdoor displays operate reliably in temperatures ranging from -20°C to 60°C, with high brightness levels (5000-8000 nits) that ensure visibility even in direct sunlight. They're also built to withstand wind, rain, and other weather conditions.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What resolution should I choose for my LED display?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Resolution choice depends on viewing distance and application. For close-up viewing (retail, corporate environments), we recommend higher pixel density with smaller pixel pitch (P1.2-P2.5). For medium distances (events, conferences), P2.5-P5 works well. For outdoor billboards viewed from far away, P6-P10 is typically sufficient.</p>
+                        <p>We offer resolutions from HD to 8K. Our team can help you determine the optimal resolution based on your specific needs and budget.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How much does an LED screen cost?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>LED screen costs vary based on size, resolution, indoor/outdoor rating, and features. Generally, prices range from a few thousand dollars for small indoor displays to hundreds of thousands for large outdoor installations.</p>
+                        <p>Factors affecting cost include: pixel pitch (higher resolution = higher cost), brightness requirements, weather protection, installation complexity, and additional features like transparency or flexibility. Contact us for a detailed quote tailored to your specific needs.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer installation and maintenance services?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We provide comprehensive installation services performed by certified technicians. This includes site assessment, structural engineering, installation, calibration, and training for your team.</p>
+                        <p>We also offer ongoing maintenance packages including 24/7 technical support, regular inspections, cleaning, software updates, and prompt repairs. Our preventive maintenance programs help maximize your display's lifespan and performance.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can LED screens be customized to any size or shape?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! One of the greatest advantages of LED technology is its modular design. Screens can be built to virtually any size or shape by combining individual LED panels or modules.</p>
+                        <p>We can create curved displays, circular screens, irregular shapes, and even 3D structures. Our flexible LED panels can bend up to 360°, enabling creative installations that were previously impossible. Share your vision with us, and we'll make it reality.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What content can I display on LED screens?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>LED screens can display virtually any digital content including: videos (all formats), images, live feeds, social media content, real-time data, interactive content, 3D animations, and more.</p>
+                        <p>Our displays support standard video formats (MP4, AVI, MOV) and image formats (JPG, PNG, GIF). We provide user-friendly content management systems that allow you to schedule, update, and manage content remotely from any device.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer rental options?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We offer flexible rental solutions for events, conferences, concerts, trade shows, and temporary installations. Our rental service includes delivery, installation, technical support, and pickup.</p>
+                        <p>Rental packages are available for durations from single days to several months. All rental equipment is professionally maintained and includes backup units to ensure your event runs smoothly.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What warranty do you provide?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We stand behind our products with comprehensive warranties. Standard warranty coverage includes: 2 years for LED modules, 2 years for power supplies and control systems, and 1 year for accessories.</p>
+                        <p>Extended warranty options are available for up to 5 years. All warranties cover manufacturing defects and hardware failures. We also provide lifetime technical support for all products.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Still Have Questions?</h2>
+            <p>Our expert team is here to help you find the perfect LED solution</p>
+            <a href="contact.html" class="btn btn-light">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>LED Visual Innovation</h3>
+                    <p>Leading provider of cutting-edge LED display solutions for businesses and events worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Technology</h4>
+                    <ul>
+                        <li><a href="technology.html">MicroLED</a></li>
+                        <li><a href="technology.html">4K & 8K Displays</a></li>
+                        <li><a href="technology.html">Transparent Screens</a></li>
+                        <li><a href="technology.html">AI Optimization</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> +243 839 054 152</li>
+                        <li><i class="fas fa-phone"></i> +256 770 799 058</li>
+                        <li><i class="fas fa-envelope"></i> mugisaseba@gmail.com</li>
+                        <li><i class="fas fa-envelope"></i> ledvisualinov@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 LED Visual Innovation. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

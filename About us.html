@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - LED Visual Innovation</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="javaScript.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-header {
+            background: url('img/B20.png') center/cover;
+            padding: 150px 0 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+        }
+        
+        .page-header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .page-header p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .story-section {
+            padding: 80px 0;
+        }
+        
+        .story-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .story-content h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+        
+        .story-content p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+        
+        .values-section {
+            background: var(--light-color);
+            padding: 80px 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .value-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 25px;
+        }
+        
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        
+        .value-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        
+        .team-section {
+            padding: 80px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: var(--gradient);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+        
+        .team-member h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .team-member p {
+            color: var(--text-light);
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="img/LOGO2.png" alt="LED Visual Innovation">
+                </a>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="About us.html">About Us</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+                <li><a href="Future.html">Future</a></li>
+                <li><a href="Contact us.html" class="btn-contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About LED Visual Innovation</h1>
+            <p>Pioneers in cutting-edge LED display solutions, transforming spaces with innovation and excellence</p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-content">
+                <h2>Our Story</h2>
+                <p>Welcome to <strong>LED Visual Innovation</strong>, your trusted partner in cutting-edge LED screen solutions. Founded with a vision to revolutionize the digital display industry, we have grown into a leading provider of high-performance, energy-efficient, and visually stunning LED displays.</p>
+                
+                <p>For over 15 years, we've been at the forefront of LED technology, delivering exceptional solutions for businesses, events, and public installations across the globe. Our commitment to innovation, quality, and customer satisfaction has made us the preferred choice for hundreds of satisfied clients.</p>
+                
+                <p>We specialize in creating immersive visual experiences that captivate audiences and bring brands to life. From towering outdoor billboards to intimate indoor displays, our expertise spans every application and scale of LED technology.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide everything we do</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>We constantly push boundaries, embracing new technologies and creative solutions to stay ahead in the LED display industry.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Excellence</h3>
+                    <p>Quality is non-negotiable. We deliver only the finest LED displays with meticulous attention to detail and performance.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainability</h3>
+                    <p>We're committed to eco-friendly practices, creating energy-efficient displays that minimize environmental impact.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Partnership</h3>
+                    <p>We build lasting relationships with our clients, working together to achieve their vision and exceed expectations.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Reliability</h3>
+                    <p>Our displays are built to last, backed by comprehensive support and a commitment to your success.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Vision</h3>
+                    <p>We see beyond today, continuously evolving to shape the future of digital display technology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Team</h2>
+                <p>Experts dedicated to bringing your vision to light</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Technical Team</h3>
+                    <p>Engineering & Installation Specialists</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-photo">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Sales & Consulting</h3>
+                    <p>Expert Advisors & Project Managers</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-photo">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Support Team</h3>
+                    <p>24/7 Customer Service Professionals</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-photo">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>R&D Department</h3>
+                    <p>Innovation & Development Experts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="story-section" style="background: var(--light-color);">
+        <div class="container">
+            <div class="story-content">
+                <h2>Our Mission & Vision</h2>
+                <p><strong>Mission:</strong> To deliver world-class LED display solutions that empower businesses and organizations to communicate effectively, engage audiences, and create unforgettable visual experiences.</p>
+                
+                <p><strong>Vision:</strong> To be the global leader in LED display innovation, setting new standards for quality, performance, and sustainability while transforming how the world experiences digital content.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Work With Us?</h2>
+            <p>Let's create something extraordinary together</p>
+            <a href="contact.html" class="btn btn-light">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>LED Visual Innovation</h3>
+                    <p>Leading provider of cutting-edge LED display solutions for businesses and events worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Technology</h4>
+                    <ul>
+                        <li><a href="technology.html">MicroLED</a></li>
+                        <li><a href="technology.html">4K & 8K Displays</a></li>
+                        <li><a href="technology.html">Transparent Screens</a></li>
+                        <li><a href="technology.html">AI Optimization</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> +243 839 054 152</li>
+                        <li><i class="fas fa-phone"></i> +256 770 799 058</li>
+                        <li><i class="fas fa-envelope"></i> mugisaseba@gmail.com</li>
+                        <li><i class="fas fa-envelope"></i> ledvisualinov@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 LED Visual Innovation. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

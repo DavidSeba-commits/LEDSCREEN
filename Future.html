@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Future - LED Visual Innovation</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="javaScript.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .future-hero {
+            background: url('img/B20.png') center/cover;
+            padding: 150px 0 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .future-hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+        }
+        
+        .future-hero::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            bottom: -100px;
+            left: -100px;
+        }
+        
+        .future-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .timeline-section {
+            padding: 80px 0;
+            background: var(--light-color);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--gradient);
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+        
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-content {
+            width: 45%;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border: 4px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--primary-color);
+        }
+        
+        .timeline-year {
+            color: var(--primary-color);
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        
+        .timeline-content p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        
+        .innovations-section {
+            padding: 80px 0;
+        }
+        
+        .innovations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .innovation-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .innovation-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .innovation-icon {
+            background: var(--gradient);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            font-size: 4rem;
+        }
+        
+        .innovation-body {
+            padding: 30px;
+        }
+        
+        .innovation-body h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+        
+        .innovation-body p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                flex-direction: row !important;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 60px;
+            }
+            
+            .timeline-dot {
+                left: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="img/LOGO2.png" alt="LED Visual Innovation">
+                </a>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="About us.html">About Us</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+                <li><a href="Future.html">Future</a></li>
+                <li><a href="Contact us.html" class="btn-contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="future-hero">
+        <div class="container">
+            <h1 style="font-size: 3.5rem; margin-bottom: 20px;">The Future of LED Displays</h1>
+            <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto;">Exploring tomorrow's innovations in visual technology</p>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Innovation Roadmap</h2>
+                <p>Charting the course of LED display evolution</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2025</div>
+                        <h3>MicroLED Mass Production</h3>
+                        <p>Scaling up production of ultra-efficient MicroLED displays with 0.5mm pixel pitch for unprecedented image quality and energy savings.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2026</div>
+                        <h3>AI Content Optimization</h3>
+                        <p>Launch of next-generation AI systems that automatically enhance content, predict maintenance needs, and optimize energy consumption in real-time.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2027</div>
+                        <h3>Holographic LED Displays</h3>
+                        <p>Introduction of 3D holographic LED screens that create floating images without glasses, revolutionizing retail and entertainment experiences.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2028</div>
+                        <h3>Quantum Dot Integration</h3>
+                        <p>Combining quantum dot technology with LEDs to achieve 100% color gamut coverage and colors beyond current display capabilities.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2030</div>
+                        <h3>Zero-Carbon Displays</h3>
+                        <p>Achieving complete carbon neutrality with solar-powered displays, recyclable materials, and zero-emission manufacturing processes.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Innovations -->
+    <section class="innovations-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Breakthrough Technologies We're Developing</h2>
+                <p>The next generation of visual experiences</p>
+            </div>
+            
+            <div class="innovations-grid">
+                <div class="innovation-card">
+                    <div class="innovation-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="innovation-body">
+                        <h3>Neural Display Interface</h3>
+                        <p>Displays that respond to brain signals and eye movements, creating personalized viewing experiences and accessibility for users with disabilities.</p>
+                    </div>
+                </div>
+                
+                <div class="innovation-card">
+                    <div class="innovation-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <div class="innovation-body">
+                        <h3>Volumetric 3D Displays</h3>
+                        <p>True 3D visualization without glasses, allowing viewers to see objects from any angle with depth and parallax in free space.</p>
+                    </div>
+                </div>
+                
+                <div class="innovation-card">
+                    <div class="innovation-icon">
+                        <i class="fas fa-hand-pointer"></i>
+                    </div>
+                    <div class="innovation-body">
+                        <h3>Touchless Interaction</h3>
+                        <p>Gesture and voice-controlled displays using advanced sensors and AI, enabling hygienic, intuitive interaction from a distance.</p>
+                    </div>
+                </div>
+                
+                <div class="innovation-card">
+                    <div class="innovation-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="innovation-body">
+                        <h3>Energy Harvesting</h3>
+                        <p>Self-powered displays that generate electricity from ambient light, movement, and electromagnetic fields, eliminating power cables.</p>
+                    </div>
+                </div>
+                
+                <div class="innovation-card">
+                    <div class="innovation-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <div class="innovation-body">
+                        <h3>Nano-Pixel Technology</h3>
+                        <p>Displays with pixel sizes measured in nanometers, achieving resolutions beyond 16K for medical imaging and scientific applications.</p>
+                    </div>
+                </div>
+                
+                <div class="innovation-card">
+                    <div class="innovation-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <div class="innovation-body">
+                        <h3>Atmospheric Projection</h3>
+                        <p>LED systems that project images onto air molecules, creating displays in open spaces without physical screens.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Statement -->
+    <section class="story-section" style="background: var(--light-color);">
+        <div class="container">
+            <div class="story-content" style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <h2>Our Vision for 2035</h2>
+                <p style="font-size: 1.2rem; color: var(--text-light); line-height: 1.9; margin-bottom: 25px;">By 2035, we envision a world where LED displays are seamlessly integrated into every aspect of daily life—from intelligent building facades that adapt to weather and time of day, to wearable displays woven into fabric, and immersive virtual environments indistinguishable from reality.</p>
+                
+                <p style="font-size: 1.2rem; color: var(--text-light); line-height: 1.9; margin-bottom: 25px;">Our displays will be completely sustainable, manufacturing themselves from recycled materials with zero waste. They'll communicate with each other, creating city-wide synchronized visual experiences. Medical applications will use our ultra-high-resolution displays for remote surgery and diagnosis.</p>
+                
+                <p style="font-size: 1.2rem; color: var(--text-light); line-height: 1.9;">Most importantly, our technology will bridge digital and physical worlds, making information accessible anywhere, anytime, while enhancing rather than replacing human connections.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Join Us on This Journey</h2>
+            <p>Be part of shaping the future of visual technology</p>
+            <a href="contact.html" class="btn btn-light">Partner With Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>LED Visual Innovation</h3>
+                    <p>Leading provider of cutting-edge LED display solutions for businesses and events worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Technology</h4>
+                    <ul>
+                        <li><a href="technology.html">MicroLED</a></li>
+                        <li><a href="technology.html">4K & 8K Displays</a></li>
+                        <li><a href="technology.html">Transparent Screens</a></li>
+                        <li><a href="technology.html">AI Optimization</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> +243 839 054 152</li>
+                        <li><i class="fas fa-phone"></i> +256 770 799 058</li>
+                        <li><i class="fas fa-envelope"></i> mugisaseba@gmail.com</li>
+                        <li><i class="fas fa-envelope"></i> ledvisualinov@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 LED Visual Innovation. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
