@@ -158,6 +158,54 @@ img {
     margin: 4px 0;
     transition: var(--transition);
     border-radius: 3px;
+    transform-origin: center;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 85px;
+        flex-direction: column;
+        background: var(--dark-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.4s ease-in-out;
+        padding: 40px 0;
+        gap: 0;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        height: calc(100vh - 85px);
+        overflow-y: auto;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        padding: 15px 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .nav-menu a {
+        display: block;
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 12px 20px;
+    }
+
+    .nav-menu .btn-contact {
+        margin: 20px auto;
+        width: 80%;
+        text-align: center;
+    }
+    
 }
 
 /* ========== ENHANCED HERO SECTION ========== */
